@@ -1,0 +1,6 @@
+keyboard
+numpy
+PySide6
+python-dotenv
+requests
+sounddevice
