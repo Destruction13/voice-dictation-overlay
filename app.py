@@ -374,8 +374,8 @@ class OverlayWindow(QWidget):
 
 
 class DictationController(QObject):
-    alt_pressed = Signal()
-    alt_released = Signal()
+    hotkey_pressed = Signal()
+    hotkey_released = Signal()
     state_changed = Signal(str)
     transcript_changed = Signal(str)
     level_changed = Signal(float)
@@ -391,16 +391,16 @@ class DictationController(QObject):
         self.target_hwnd = 0
         self.current_buffers: list[np.ndarray] = []
 
-        self.alt_pressed.connect(self.start_session)
-        self.alt_released.connect(self.stop_session)
+        self.hotkey_pressed.connect(self.start_session)
+        self.hotkey_released.connect(self.stop_session)
         self.job_finished.connect(self.handle_transcription_finished)
         self.paste_finished.connect(self.reset_after_paste)
 
         keyboard.on_press_key(
-            "left alt", lambda _event: self.alt_pressed.emit(), suppress=True
+            "f1", lambda _event: self.hotkey_pressed.emit(), suppress=True
         )
         keyboard.on_release_key(
-            "left alt", lambda _event: self.alt_released.emit(), suppress=True
+            "f1", lambda _event: self.hotkey_released.emit(), suppress=True
         )
 
     def shutdown(self) -> None:

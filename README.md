@@ -1,12 +1,12 @@
 # Voice dictation overlay
 
-Small Windows app that records speech while you hold `Left Alt`, sends audio to
+Small Windows app that records speech while you hold `F1`, sends audio to
 Groq Whisper, and types the recognized text into the active window.
 
 ## What it does
 
-- Hold `Left Alt` to start recording.
-- Release `Left Alt` to stop recording and transcribe.
+- Hold `F1` to start recording.
+- Release `F1` to stop recording and transcribe.
 - The app shows a small floating microphone indicator that reacts to your voice.
 - The recognized text is typed into the currently active window.
 
@@ -45,9 +45,9 @@ Or double-click `run.bat`.
 ## Usage
 
 1. Focus any text field.
-2. Hold `Left Alt`.
+2. Hold `F1`.
 3. Speak.
-4. Release `Left Alt`.
+4. Release `F1`.
 5. Wait for the text to be inserted.
 
 ## Notes
